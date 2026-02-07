@@ -24,9 +24,17 @@ jobs:
           distribution: temurin
           java-version: 17
 
-      # Build site (generate static files)
+      # 🔍 Debug repository structure (IMPORTANT)
+      - name: Debug repository structure
+        run: |
+          echo "Current directory:"
+          pwd
+          echo "List files:"
+          ls -R
+
+      # 🛠 Build site (TEMP – we will fix path after debug)
       - name: Build Static Site
-        run: mvn -f java-static-site/pom.xml clean package
+        run: mvn clean package
 
       # Configure AWS credentials
       - name: Configure AWS credentials
