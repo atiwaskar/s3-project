@@ -26,7 +26,7 @@ jobs:
 
       # Build site (generate static files)
       - name: Build Static Site
-        run: mvn clean package
+        run: mvn -f java-static-site/pom.xml clean package
 
       # Configure AWS credentials
       - name: Configure AWS credentials
