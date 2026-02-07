@@ -17,13 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # Setup Java
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: temurin
-          java-version: 17
-
       # 🔍 Debug repository structure (IMPORTANT)
       - name: Debug repository structure
         run: |
@@ -31,10 +24,6 @@ jobs:
           pwd
           echo "List files:"
           ls -R
-
-      # 🛠 Build site (TEMP – we will fix path after debug)
-      - name: Build Static Site
-        run: mvn clean package
 
       # Configure AWS credentials
       - name: Configure AWS credentials
